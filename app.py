@@ -83,8 +83,8 @@ def handle_mqtt_message(client, userdata, message):
                     print(f"Image uploaded to Cloudinary: {latest_image_url}")
 
                     # Prepare email details
-                    subject = "New Image Uploaded"
-                    body = f"A new image has been uploaded. You can view it here: {latest_image_url}"
+                    subject = "Knock - Knock "
+                    body = f"Some one is there at your door. You can view it here: {latest_image_url}"
 
                     # Send the email asynchronously
                     Thread(target=send_async_email, args=(app, RECIPIENT_EMAIL, subject, body)).start()

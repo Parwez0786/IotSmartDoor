@@ -84,10 +84,10 @@ def handle_mqtt_message(client, userdata, message):
                     result = cloudinary.uploader.upload(image_path)
                     latest_image_url = result.get('secure_url')
                     print(f"Image uploaded to Cloudinary: {latest_image_url}")
-
+                    website="https://iotsmartdoor.onrender.com/"
                     # Prepare email details
                     subject = "Knock - Knock "
-                    body = f"Some one is there at your door. You can view it here: {latest_image_url}"
+                    body = f"Some one is there at your door. You can view them on our website :{website}, Image url: {latest_image_url}"
 
                     # Send the email asynchronously
                     Thread(target=send_async_email, args=(app, RECIPIENT_EMAIL, subject, body)).start()

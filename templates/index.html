@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IoT Door Control</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>IoT Door Control</h1>
+        <div class="image-section">
+            {% if image_url %}
+            <img src="{{ image_url }}" alt="Door Image" id="door-image">
+            {% else %}
+            <p>No image received yet.</p>
+            {% endif %}
+        </div>
+        <div class="controls">
+            <form action="{{ url_for('send_command') }}" method="post">
+                <button type="submit" name="command" value="open" class="btn open">Open</button>
+                <button type="submit" name="command" value="close" class="btn close">Close</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+
+</html>

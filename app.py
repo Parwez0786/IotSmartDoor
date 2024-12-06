@@ -69,8 +69,11 @@ def handle_mqtt_message(client, userdata, message):
         img_byte_array = message.payload
         if img_byte_array:
             try:
-                # Save the received image data to a file
-                image_path = 'received_image.jpg'
+                 # Ensure the static/images directory exists
+                os.makedirs('static/images', exist_ok=True)
+
+                # Save the received image data to a file within the static folder
+                image_path = os.path.join('static', 'images', 'received_image.jpg')
                 with open(image_path, 'wb') as f:
                     f.write(img_byte_array)
                 print(f"Image saved successfully as '{image_path}'.")

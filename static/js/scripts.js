@@ -25,6 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
           // On error, fallback to the existing logic
           imageElement.src = `${imageElement.src.split("?")[0]}?t=${timestamp}`;
         });
-    }, 10000); // Refresh every 10 seconds
+    }, 3000); // Refresh every 10 seconds
   }
 });

@@ -11,11 +11,11 @@
     <div class="container">
         <h1>IoT Door Control</h1>
         <div class="image-section">
-            {% if image_url %}
-            <img src="{{ image_url }}" alt="Door Image" id="door-image">
-            {% else %}
+            <!-- {% if image_url %} -->
+            <img src="/received_image.jpg" alt="No one at the Door" id="door-image">
+            <!-- {% else %}
             <p>No image received yet.</p>
-            {% endif %}
+            {% endif %} -->
         </div>
         <div class="controls">
             <form action="{{ url_for('send_command') }}" method="post">

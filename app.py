@@ -119,7 +119,7 @@ def send_command():
     print(f"Received command: {command}")
     mqtt.publish(COMMAND_TOPIC, command)
     print(f"Published command: {command} to topic: {COMMAND_TOPIC}")
-    return render_template('index.html')
+    return redirect(url_for('index'))
 
 @app.route('/latest_image_url')
 def get_latest_image_url():

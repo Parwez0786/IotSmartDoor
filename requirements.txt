@@ -1,0 +1,4 @@
+Flask==2.3.2
+Flask-MQTT==1.1.1
+cloudinary==1.30.0
+Flask-Mail==0.9.1

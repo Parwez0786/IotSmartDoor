@@ -108,5 +108,11 @@ def send_command():
     mqtt.publish(COMMAND_TOPIC, command)
     return redirect(url_for('index'))
 
+
+@app.route('/latest_image_url')
+def get_latest_image_url():
+    return {'image_url': latest_image_url}
+
+
 if __name__ == '__main__':
     app.run(debug=True)

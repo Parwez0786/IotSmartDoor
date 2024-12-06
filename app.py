@@ -84,7 +84,7 @@ def handle_mqtt_message(client, userdata, message):
 
                     # Prepare email details
                     subject = "New Image Uploaded"
-                    body = f"A new image has been uploaded. You can view it here: {'http://127.0.0.1:5000/'}"
+                    body = f"A new image has been uploaded. You can view it here: {'https://iotsmartdoor.onrender.com'}"
 
                     # Send the email asynchronously
                     Thread(target=send_async_email, args=(app, RECIPIENT_EMAIL, subject, body)).start()

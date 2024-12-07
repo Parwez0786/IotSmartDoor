@@ -6,6 +6,7 @@ import os
 from flask_mail import Mail, Message
 from threading import Thread
 import traceback
+from command import main
 
 app = Flask(__name__)
 
@@ -117,9 +118,8 @@ def index():
 def send_command():
     command = request.form.get('command')
     print(f"Received command: {command}")
-    mqtt.publish(COMMAND_TOPIC, command)
-    print(f"Published command: {command} to topic: {COMMAND_TOPIC}")
-    return redirect(url_for('index'))
+    main(command)
+    return "Door "+command+" !"
 
 @app.route('/latest_image_url')
 def get_latest_image_url():
